@@ -1,6 +1,6 @@
 <h1>Yoga Studio</h1>
 
-Visit this webpage here: [Yoga-Studio-Webpage](https://yoga-studio-820c8.web.app/)
+Visit this project webpage here: [Yoga-Studio-Webpage](https://yoga-studio-820c8.web.app/)
 
 # Getting Started with Create React App
 
