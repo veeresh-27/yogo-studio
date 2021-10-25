@@ -1,7 +1,6 @@
 <h1>Yoga Studio</h1>
-This project was created with create-react-app
 
-Visit this webpage here: https://yoga-studio-820c8.web.app/
+Visit this webpage here: [Yoga-Studio-Webpage](https://yoga-studio-820c8.web.app/)
 
 # Getting Started with Create React App
 
