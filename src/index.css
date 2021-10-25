@@ -1,13 +1,427 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --header-1: 64px;
+    --header-2: 48px;
+    --subtitle: 36px;
+    --body: 22px;
+    --c-primary: #cfdac3;
+    --c-accent: #e9e0cb;
+    --c-dark: #222222;
+    --c-light: #f6f6f6;
+    --c-grey: #dddddd;
+    --c-warning: #f09a18;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--c-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: var(--header-1);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--header-2);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: var(--subtitle);
+    font-weight: 700;
+}
+
+p {
+    font-size: var(--body);
+    font-weight: 500;
+    text-align: justify;
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--c-light);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 120px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.navbar .burger {
+    display: none;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar .nav-links ul .nav-link {
+    height: 100%;
+    margin-right: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar .nav-links ul .nav-link:hover {
+    transform: translateY(-2px);
+    color: var(--c-warning);
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .hero-image {
+    padding-top: 10vh;
+    width: 50%;
+}
+
+.hero .hero-image img {
+    width: 100%;
+}
+
+.hero .hero-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero .hero-text p {
+    margin: 8px 0;
+}
+
+.btn {
+    margin: 8px 0;
+    padding: 10px 20px;
+    width: fit-content;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background-color: var(--c-primary);
+    color: var(--c-dark);
+}
+
+.btn.btn-outline {
+    background-color: var(--c-light);
+    color: var(--c-dark);
+    border: 2px solid var(--c-primary);
+}
+
+.about {
+    width: 100%;
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about p {
+    margin: 8px 0;
+}
+
+.services {
+    width: 100%;
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.services .service {
+    margin-bottom: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services .service.reverse {
+    flex-direction: row-reverse;
+}
+
+.services .service .service-img {
+    width: 40%;
+}
+
+.services .service .service-img img {
+    width: 100%;
+}
+
+.services .service .service-info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.services .service .service-info p {
+    margin-top: 16px;
+}
+
+.pricing {
+    width: 100%;
+    padding: 50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing .card {
+    width: 30%;
+    margin: 16px;
+    padding: 16px;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    border-radius: 4px;
+    background-color: var(--c-light);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing .card.popular {
+    position: relative;
+    border: 3px solid var(--c-primary);
+    box-shadow: 0px 0px 8px 0px var(--c-primary);
+}
+
+.pricing .card.popular::before {
+    position: absolute;
+    top: 0;
+    content: 'Most Popular';
+    width: 97%;
+    background-color: var(--c-primary);
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.pricing .card h3 {
+    text-align: center;
+}
+
+.pricing .card ul {
+    margin: 16px 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.pricing .card ul li {
+    margin: 8px 0;
+}
+
+.contact {
+    width: 100%;
+    padding: 50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact .contact-details .icons {
+    display: flex;
+}
+
+.contact .contact-details .icons .icon {
+    margin: 16px 0;
+    margin-right: 12px;
+    width: 40px;
+}
+
+.contact .contact-form {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact .contact-form h3 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.contact .contact-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.contact .contact-form form input,
+.contact .contact-form form textarea {
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid var(--c-grey);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    outline: none;
+    width: 80%;
+}
+
+.contact .contact-form form input::placeholder,
+.contact .contact-form form textarea::placeholder {
+    color: var(--c-grey);
+}
+
+.contact .contact-form form .btn {
+    width: 80%;
+}
+
+
+/* Tablet CSS */
+
+@media screen and (max-width: 768px) {
+     :root {
+        --header-1: 48px;
+        --header-2: 32px;
+        --subtitle: 28px;
+        --body: 18px;
+    }
+    .navbar {
+        padding: 20px;
+    }
+    .navbar .nav-links {
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        background-color: var(--c-grey);
+        width: 70%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 200ms;
+        transform: translatex(100%);
+    }
+    .navbar .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 40vh;
+    }
+    .navbar .nav-links ul .nav-link {
+        margin: 8px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar.open .nav-links {
+        transform: translatex(0%);
+    }
+    .navbar .burger {
+        display: block;
+        cursor: pointer;
+    }
+    .navbar .burger:hover {
+        color: var(--c-warning);
+    }
+    .about,
+    .services,
+    .pricing,
+    .contact {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .hero {
+        padding: 20px;
+    }
+}
+
+
+/* Mobile CSS */
+
+@media screen and (max-width: 640px) {
+     :root {
+        --header-1: 48px;
+        --header-2: 32px;
+        --subtitle: 28px;
+        --body: 18px;
+    }
+    .hero {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+    .hero .hero-text,
+    .hero .hero-image {
+        width: 100%;
+        margin: 16px 0;
+    }
+    .about,
+    .services,
+    .pricing,
+    .contact {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .services .service,
+    .services .service.reverse,
+    .pricing,
+    .contact {
+        flex-direction: column;
+    }
+    .services .service .service-img,
+    .services .service .service-info {
+        width: 100%;
+        margin: 8px 0;
+    }
+    .pricing .card {
+        width: 100%;
+    }
+    .contact .contact-details,
+    .contact .contact-form {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+    .contact .contact-form form input,
+    .contact .contact-form form textarea {
+        width: 100%;
+    }
 }

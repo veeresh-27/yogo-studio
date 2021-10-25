@@ -1,0 +1,14 @@
+[{
+        "title": "Beach Yoga",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi minima minus iusto deserunt pariatur eum fuga laboriosam consequuntur assumenda est?",
+        "image": "/assets/images/beachYoga.png",
+        "rev": false
+
+    },
+    {
+        "title": "Beach Yoga",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi minima minus iusto deserunt pariatur eum fuga laboriosam consequuntur assumenda est?",
+        "image": "/assets/images/groupYoga.png",
+        "rev": true
+    }
+]

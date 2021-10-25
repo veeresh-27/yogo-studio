@@ -1,0 +1,21 @@
+[{
+        "title": "Home",
+        "link": "#hero"
+    },
+    {
+        "title": "About",
+        "link": "#about"
+    },
+    {
+        "title": "Services",
+        "link": "#pricing"
+    },
+    {
+        "title": "Contact",
+        "link": "#contact"
+    },
+    {
+        "title": "Book Now",
+        "link": "#book"
+    }
+]
